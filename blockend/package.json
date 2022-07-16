@@ -1,0 +1,34 @@
+{
+  "name": "energi-dapps-dev-challenge-contracts",
+  "version": "1.0.0",
+  "description": "Energi dApps development challenge smart contracts",
+  "main": "truffle-config.js",
+  "scripts": {
+    "launch-devnet": "ganache-cli --chainId 1337 -a 10 -e 100000 --acctKeys devnet-accounts.json -m \"olive cook review chalk discover sample vessel vast soul turkey cigar moment\"",
+    "compile-all": "truffle compile --all",
+    "compile-all-clean": "rm -rf ./abis && truffle compile --all",
+    "deploy-devnet": "truffle migrate --network development --compile-none",
+    "deploy-devnet-reset": "truffle migrate --network development --reset",
+    "deploy-rinkeby": "truffle migrate --network rinkeby --compile-none",
+    "deploy-rinkeby-reset": "truffle migrate --network rinkeby --compile-none --reset",
+    "deploy-mainnet": "truffle migrate --network mainnet --compile-none",
+    "deploy-energi": "truffle migrate --network energi --compile-none",
+    "authAssign-devnet": "truffle exec scripts/AuthAssignment.js --network development",
+    "authAssign-rinkeby": "truffle exec scripts/AuthAssignment.js --network rinkeby",
+    "authAssign-mainnet": "truffle exec scripts/AuthAssignment.js --network mainnet",
+    "test": "truffle test --compile-none",
+    "verify-rinkeby": "truffle run verify --network rinkeby",
+    "verify-mainnet": "truffle run verify --network mainnet",
+    "verify-energi": "truffle run verify --network energi"
+  },
+  "author": "Maxime Suard",
+  "license": "ISC",
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.5.0",
+    "@truffle/hdwallet-provider": "^2.0.7",
+    "chai": "^4.3.6",
+    "chai-as-promised": "^7.1.1",
+    "ethers": "^5.6.6",
+    "truffle-plugin-verify": "^0.5.25"
+  }
+}
